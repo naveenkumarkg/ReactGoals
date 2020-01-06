@@ -4,20 +4,26 @@ import NewGoal from './newGoal/newgoal';
 import './App.css'
 
 const App = () => {
-const [courseGoals,setCoourseGoals]=useState([
+// const [courseGoals,setCoourseGoals]=useState([
+//   { id: '1', text: 'Finish the course' },
+//   { id: '2', text: 'Learn all about the course' },
+//   { id: '3', text: 'Help other students in the course' },
+// ]);
+
+const [courseGoals, setCoourseGoals] = useState([
   { id: '1', text: 'Finish the course' },
   { id: '2', text: 'Learn all about the course' },
   { id: '3', text: 'Help other students in the course' },
 ]);
-  // const courseGoals = [
-  //   { id: '1', text: 'Finish the course' },
-  //   { id: '2', text: 'Learn all about the course' },
-  //   { id: '3', text: 'Help other students in the course' },
-  // ];
-
+ 
   const addNewGoalHandler = (goal)=>{
-    courseGoals.push(goal);
-    setCoourseGoals(courseGoals.concat(goal));
+  
+  setCoourseGoals((prevData)=>{
+    return prevData.concat(goal) 
+  });
+
+
+ 
     console.log(courseGoals)
   }
 
